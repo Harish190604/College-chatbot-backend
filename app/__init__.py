@@ -1,2 +1,3 @@
-# Python package marker
+from app.app import create_app, app
 
+__all__ = ['create_app', 'app']

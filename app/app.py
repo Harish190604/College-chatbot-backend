@@ -41,7 +41,8 @@ def create_app(config_class=Config):
     app.register_blueprint(chatbot_bp, url_prefix='/api/v1/chatbot')
     app.register_blueprint(students_bp, url_prefix='/api/v1/students')
 
-    @app.route('/api/health', methods=['GET'])
+    @app.route('/', methods=['GET', 'HEAD'])
+    @app.route('/api/health', methods=['GET', 'HEAD'])
     def health():
         return jsonify({
             "status": "healthy",
